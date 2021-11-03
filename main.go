@@ -43,14 +43,7 @@ func Enqueue(fil *os.File, value string) {
 		f, err := os.Create(filename + ".json")
 		if err != nil {
 			log.Fatal("Failed to create output")
-		}
-		_, err = f.Seek(size-1, 0)
-		if err != nil {
-			log.Fatal("Failed to seek")
-		}
-		_, err = f.Write([]byte{0})
-		if err != nil {
-			log.Fatal("Write failed")
+	
 		}
 		err = f.Close()
 		if err != nil {
